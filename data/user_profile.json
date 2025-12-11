@@ -1,0 +1,16 @@
+{
+    "mouse": {
+        "velocity_mean": 1694.6546716386888,
+        "velocity_std": 1970.2982473679933,
+        "acceleration_mean": 756319.6950346072,
+        "acceleration_std": 1285632.7981160472,
+        "angle_mean": 1.2651035339457388,
+        "angle_std": 1.1511475243531406
+    },
+    "keyboard": {
+        "press_mean": 0.09710728988594033,
+        "press_std": 0.03940688632319631,
+        "flight_mean": 0.1937727323905167,
+        "flight_std": 0.3206749810666502
+    }
+}

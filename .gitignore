@@ -1,0 +1,10 @@
+# Ignore cache folders
+utils/__pycache__/
+agents/__pycache__/
+
+# VS Code settings
+.vscode/
+
+# Large model files
+models/phishing_model.pkl
+models/network_isolation_forest.pkl
