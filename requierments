@@ -1,0 +1,9 @@
+psutil
+scikit-learn
+pandas
+numpy
+joblib
+geoip2
+pynput
+pyperclip
+tk
