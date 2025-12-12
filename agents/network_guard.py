@@ -15,7 +15,7 @@ SAFE_PORTS = [80, 443, 53, 8080]
 
 ALLOWED_APPS = [
     "chrome.exe", "firefox.exe", "msedge.exe", "brave.exe", 
-    "opera.exe", "spotify.exe", "zoom.exe", "discord.exe", 
+    "opera.exe", "spotify.exe", "Zoom.exe", "discord.exe", 
     "teams.exe", "slack.exe", "outlook.exe", "skype.exe", 
     "onedrive.exe", "dropbox.exe", "steam.exe", "epicgameslauncher.exe","StartMenuExperienceHost.exe"
 ]
@@ -28,7 +28,7 @@ RESTRICTED_TOOLS = [
 CRITICAL_PROCESSES = [
     "svchost.exe", "System", "Registry", "smss.exe", "csrss.exe", 
     "wininit.exe", "services.exe", "lsass.exe", "winlogon.exe", 
-    "spoolsv.exe", "explorer.exe", "MsMpEng.exe"
+    "spoolsv.exe", "explorer.exe", "MsMpEng.exe", "taskhostw.exe","msedgewebview2.exe"
 ]
 
 BLOCK_TRESHOLD = 70
@@ -114,7 +114,7 @@ def calculate_connection_risk(proc_name, remote_port, country,traffic_score,traf
     reasons = []
 
     score += traffic_score
-    reasons.extend(traffic_reasons)
+    reasons += traffic_reasons
 
     category = get_process_category(proc_name)
 
@@ -135,6 +135,9 @@ def calculate_connection_risk(proc_name, remote_port, country,traffic_score,traf
     elif category == "UNKNOWN_APP":
         if country != "Local":
             score += 10
+
+    if country == "Local":
+        score -= 20
 
     if remote_port in SAFE_PORTS:
         score -= 10
@@ -230,6 +233,7 @@ def start_monitoring(alert_queue, stop_event):
 
                 model_score = calc_model_score(process, conn)
                 risk_score += model_score
+                reasons.append(f"Anomaly Detection Model Flaged Connection as Suspicious")
 
                 if risk_score >= BLOCK_TRESHOLD:
 
