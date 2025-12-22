@@ -1,4 +1,4 @@
-# 🛡️ AEGIS - AI-Powered Autonomous Defense System
+# 🛡️ AI-Powered Autonomous Defense System
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![AI](https://img.shields.io/badge/AI-Scikit--Learn-orange) ![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Security](https://img.shields.io/badge/Security-Endpoint%20Protection-red)
 
