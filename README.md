@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![AI](https://img.shields.io/badge/AI-Scikit--Learn-orange) ![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Security](https://img.shields.io/badge/Security-Endpoint%20Protection-red)
 
-**AEGIS** (Advanced Endpoint Guard & Intelligence System) is a comprehensive, Python-based **Endpoint Detection and Response (EDR)** solution. Unlike traditional antiviruses that rely solely on signatures, AEGIS employs a **Hybrid Detection Engine** combining **static rules**, **behavioral analysis**, **honeypots**, and **Artificial Intelligence** (Unsupervised Learning) to detect zero-day threats, **ransomware**, and unauthorized users.
+This system is a comprehensive, Python-based **Endpoint Detection and Response (EDR)** solution. Unlike traditional antiviruses that rely solely on signatures, AEGIS employs a **Hybrid Detection Engine** combining **static rules**, **behavioral analysis**, **honeypots**, and **Artificial Intelligence** (Unsupervised Learning) to detect **zero-day** threats, **ransomware**, and unauthorized users.
 
 ---
 
@@ -27,12 +27,12 @@
     * **Mouse Trajectory:** Analyzes velocity, acceleration, and angular movements.
 * **Defense:** Instantly detects **Account Takeover (ATO)** and physical intrusion. If the behavioral score drops below the threshold, the system initiates a **Hard Lock**.
 
-### 🔒 4. Ransomware Guard (Canary System)
+### 🔒 4. Ransomware Guard 
 * **Detection Logic:** Honey-token deployment & File Integrity Monitoring (FIM).
-* **Mechanism:** Deploys hidden decoy files ("Canaries") in sensitive directories (`/Desktop`, `/Documents`).
+* **Mechanism:** Deploys hidden decoy files in sensitive directories (`/Desktop`, `/Documents`).
 * **Auto-Remediation:** Uses **SHA-256 Hashing** to detect unauthorized encryption. Upon detection, it kills the offending process and **automatically restores** the file from a secure memory buffer, effectively neutralizing the encryption impact.
 
-### 🦠 5. Malware Guard (Heuristic Process Hunter)
+### 🦠 5. Malware Guard 
 * **Detection Logic:** Goes beyond simple signature matching by analyzing the *context* of running processes in real-time.
 * **Key Capabilities:**
     * **Process Lineage Analysis:** Detects suspicious parent-child relationships (e.g., `winword.exe` spawning `cmd.exe` or `powershell.exe`), blocking **Macro-based malware** and **Fileless attacks**.
