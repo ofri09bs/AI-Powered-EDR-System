@@ -6,33 +6,33 @@ This system is a comprehensive, Python-based **Endpoint Detection and Response (
 
 ---
 
-## 🚀 Key Features (Technical Breakdown)
+## Key Features (Technical Breakdown)
 
-### 🧠 1. AI-Driven Network Threat Detection
+###  1. AI-Driven Network Threat Detection
 * **Algorithm:** Unsupervised Learning using **Isolation Forest**.
 * **Functionality:** Analyzes network flow vectors (Port, Bytes Sent/Received, Duration, Country Risk) in real-time.
 * **Capability:** Detects **Zero-Day C2 (Command & Control)** channels, beaconing behavior, and slow-rate data exfiltration that bypass traditional signature-based firewalls.
 * **Behavioral Rules:** Blocks unauthorized use of system binaries (`powershell.exe`, `cmd.exe`) for external connections (Living-off-the-Land attacks).
 
-### 🎣 2. ML-Powered Phishing Guard
+###  2. ML-Powered Phishing Guard
 * **Algorithm:** Supervised Learning using **Random Forest Classifier**.
 * **Feature Engineering:** Extracts lexical features from URLs in the clipboard (Entropy, Length, Special Characters, TLD reputation).
 * **Capability:** Predicts the probability of a URL being malicious in milliseconds.
 * **Defense:** Detects sophisticated **Typosquatting**, Homograph attacks, and obfuscated phishing links before the user even pastes them.
 
-### 👤 3. User Guard: Behavioral Biometrics Engine
+###  3. User Guard: Behavioral Biometrics Engine
 * **Algorithm:** Statistical Z-Score Analysis & Dynamic Profiling.
 * **Detection Logic:** Continuously authenticates the user based on unique motor skills:
     * **Keystroke Dynamics:** Measures "Flight Time" (latency between keys) and "Dwell Time".
     * **Mouse Trajectory:** Analyzes velocity, acceleration, and angular movements.
 * **Defense:** Instantly detects **Account Takeover (ATO)** and physical intrusion. If the behavioral score drops below the threshold, the system initiates a **Hard Lock**.
 
-### 🔒 4. Ransomware Guard 
+###  4. Ransomware Guard 
 * **Detection Logic:** Honey-token deployment & File Integrity Monitoring (FIM).
 * **Mechanism:** Deploys hidden decoy files in sensitive directories (`/Desktop`, `/Documents`).
 * **Auto-Remediation:** Uses **SHA-256 Hashing** to detect unauthorized encryption. Upon detection, it kills the offending process and **automatically restores** the file from a secure memory buffer, effectively neutralizing the encryption impact.
 
-### 🦠 5. Malware Guard 
+###  5. Malware Guard 
 * **Detection Logic:** Goes beyond simple signature matching by analyzing the *context* of running processes in real-time.
 * **Key Capabilities:**
     * **Process Lineage Analysis:** Detects suspicious parent-child relationships (e.g., `winword.exe` spawning `cmd.exe` or `powershell.exe`), blocking **Macro-based malware** and **Fileless attacks**.
@@ -50,8 +50,8 @@ This system is a comprehensive, Python-based **Endpoint Detection and Response (
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/YourUsername/AEGIS-EDR.git](https://github.com/YourUsername/AEGIS-EDR.git)
-cd AEGIS-EDR
+git clone [https://github.com/ofri09bs/AI-Powered-EDR-System.git](https://github.com/ofri09bs/AI-Powered-EDR-System.git)
+cd AI-Powered-EDR-System
 ```
 ### 2. Install Dependencies
 ```bash
@@ -65,7 +65,7 @@ Before running the main dashboard, train the system to recognize "Normal" behavi
 
 **User Biometrics:** The system will automatically enter Learning Mode for the first 60 seconds upon first launch.
 
-## 🎮 Usage
+##  Usage
 Run the main dashboard with Admin rights:
 ```bash
 python main.py
