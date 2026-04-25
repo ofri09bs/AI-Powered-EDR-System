@@ -4,7 +4,7 @@ import queue
 import time
 from datetime import datetime
 from agents import malware_guard , phishing_guard, ransom_guard, network_guard, user_guard
-import winapi_pipe_server
+from winapi_module import winapi_pipe_server
 
 ctk.set_appearance_mode("Dark")
 ctk.set_default_color_theme("blue")
