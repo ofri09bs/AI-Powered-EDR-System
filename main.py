@@ -4,6 +4,7 @@ import queue
 import time
 from datetime import datetime
 from agents import malware_guard , phishing_guard, ransom_guard, network_guard, user_guard
+import winapi_pipe_server
 
 ctk.set_appearance_mode("Dark")
 ctk.set_default_color_theme("blue")
@@ -50,6 +51,13 @@ def start_agent(name):
         else:
             log("Error: malware_guard.py not found!", "ERROR")
             return
+        
+    elif name == "WinAPI Data Pipe":
+        if winapi_pipe_server:
+            thread = threading.Thread(target=winapi_pipe_server.start_monitoring,
+                                      args=(alert_queue,stop_event))
+        else:
+            log("Error: winapi_pipe_server.py not found!", "ERROR")
 
     elif name == "Phishing Guard":
         if phishing_guard:
@@ -171,6 +179,7 @@ def init_gui():
 
     agents_list = [
         "Malware Guard",
+        "WinAPI Data Pipe"
         "User Guard",
         "Ransom Guard",
         "Phishing Guard",

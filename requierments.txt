@@ -7,3 +7,4 @@ geoip2
 pynput
 pyperclip
 tk
+pywin32
