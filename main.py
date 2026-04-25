@@ -207,7 +207,7 @@ def init_gui():
     log_box.pack(fill="both", expand=True)
     log_box.configure(state="disabled")
 
-    log("AEGIS Core initialized.")
+    log("Core initialized.")
     log("Standing by for agent activation.")
     
     check_alerts()

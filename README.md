@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![AI](https://img.shields.io/badge/AI-Scikit--Learn-orange) ![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Security](https://img.shields.io/badge/Security-Endpoint%20Protection-red)
 
-This system is a comprehensive, Python-based **Endpoint Detection and Response (EDR)** solution. Unlike traditional antiviruses that rely solely on signatures, AEGIS employs a **Hybrid Detection Engine** combining **static rules**, **behavioral analysis**, **honeypots**, and **Artificial Intelligence** (Unsupervised Learning) to detect **zero-day** threats, **ransomware**, and unauthorized users.
+This system is a comprehensive, Python-based **Endpoint Detection and Response (EDR)** solution. Unlike traditional antiviruses that rely solely on signatures, this system employs a **Hybrid Detection Engine** combining **static rules**, **behavioral analysis**, **honeypots**, and **Artificial Intelligence** (Unsupervised Learning) to detect **zero-day** threats, **ransomware**, and unauthorized users.
 
 ---
 
@@ -81,8 +81,7 @@ python main.py
 
 ### 📂 Project Structure
 ```
-AEGIS/
-│
+
 ├── agents/                 # The Core Logic Modules
 │   ├── malware_guard.py    # Process & Signature Scanner
 │   ├── network_guard.py    # AI & Rule-based Traffic Monitor
