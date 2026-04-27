@@ -38,6 +38,7 @@ process_start_times = {}
 
 #************************* Static Analysis Functions *************************#
 
+# gets the ip's country using geoip database
 def get_country(ip_address):
 
     if ip_address.startswith(("192.168.", "10.", "127.", "172.16.")):
@@ -53,7 +54,7 @@ def get_country(ip_address):
     except Exception:
         return "Unknown"
     
-
+# Catalogs known processes
 def get_process_category(proc_name):
 
     proc_name = proc_name.lower()
@@ -67,8 +68,8 @@ def get_process_category(proc_name):
     return "UNKNOWN_APP"
 
 
+# Checks whether the ratio of bytes sent to bytes recive is greater than 10.
 def check_traffic_anomalies(process):
-
     score = 0
     reasons = []
 
@@ -88,8 +89,8 @@ def check_traffic_anomalies(process):
     return score, reasons
 
 
+# checks for long duration connections (possible C2 or RAT)
 def check_connection_duration(pid):
-
     score = 0
     reasons = []
 
@@ -107,7 +108,7 @@ def check_connection_duration(pid):
 
     return score, reasons
 
-
+# calculates general connection risk by category, country and port
 def calculate_connection_risk(proc_name, remote_port, country,traffic_score,traffic_reasons):
 
     score = 0
@@ -161,6 +162,7 @@ except Exception:
     model = None
     print(f"[NetworkGuard] Warning: Could not load network anomaly detection model from models/network_isolation_forest.pkl.")
 
+# calculates the anomaly detection model
 def calc_model_score(process,conn):
     try:
         features = extract_features(process, conn)
@@ -178,7 +180,7 @@ def calc_model_score(process,conn):
         return 10
 
 
-
+# main loop
 def start_monitoring(alert_queue, stop_event):
     print("[NetworkGuard] Monitoring active connections with GeoIP...")
 

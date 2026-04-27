@@ -88,7 +88,7 @@ def restore_trap_files(filepath):
         return False
 
 def find_ransom_suspect():
-
+    # finding the suspect by checking if process wrote a lot of bytes.
     suspects = []
     for proc in psutil.process_iter(['pid', 'name','io_counters','open_files']):
         try:
